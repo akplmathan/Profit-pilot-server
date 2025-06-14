@@ -19,9 +19,7 @@ const postSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
-  categories: [{
-    type: String
-  }],
+  categories: [String],
   tags: [{
     type: String
   }],

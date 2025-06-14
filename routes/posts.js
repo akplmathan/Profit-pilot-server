@@ -86,12 +86,11 @@ router.put('/:id', adminAuth, upload.single('image'), async (req, res) => {
       await cloudinary.uploader.destroy(publicId);
     }
     }
-
     const updateData = {
       title,
       content,
-      categories: categories ? categories.split(',').map(cat => cat.trim()) : [],
-      tags: tags ? tags.split(',').map(tag => tag.trim()) : [],
+      categories:  JSON.parse(categories),
+      tags: tags ? tags : [],
       status
     };
 
